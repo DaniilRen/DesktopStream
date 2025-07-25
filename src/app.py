@@ -24,7 +24,7 @@ def init_db():
         c.execute("SELECT COUNT(*) FROM addresses")
         count = c.fetchone()[0]
         if count == 0:
-            sample_addresses = ['192.168.1.10', '192.168.1.20', '192.168.1.30']
+            sample_addresses = ['192.168.0.142']
             c.executemany("INSERT INTO addresses (ip_addr) VALUES (?)",
                           [(addr,) for addr in sample_addresses])
             conn.commit()
